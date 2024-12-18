@@ -1,0 +1,109 @@
+#include <iostream>
+#include <string>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+using namespace std;
+
+class Car{
+	private:
+		int year;
+		string make;
+		int speed;
+	
+	public:
+		//constructors
+		Car(int yr, string mk){
+			year = yr;
+			make = mk;
+			speed = 0;
+		}
+		
+		Car()
+		{
+			year = 0;
+			make = "unknow";
+			speed = 0;
+		}
+		
+		//accessors
+		int getYear()
+		{
+			return year;
+		}
+		
+		string getMake()
+		{
+			return make;
+		}
+		
+		int getSpeed()
+		{
+			return speed;
+		}
+		
+		//mutators
+		void setYear(int yr)
+		{
+			year = yr;
+		}
+		
+		void setMake(string mk)
+		{
+			make = mk;
+		}	
+		
+		void setSpeed(int sp)
+		{
+			speed = sp;
+		}
+		
+		//operational function
+		void accelerate()
+		{
+			speed += 5;
+		}
+		
+		void brake()
+		{
+			if(speed <= 5)
+				speed = 0;
+			else
+				speed -= 5;
+		}
+		
+
+};
+
+
+int main(int argc, char** argv) {
+	
+	Car myCar(2015, "Toyota Corolla");
+	
+	cout<<"Your car make is "<<myCar.getMake() <<" Model year is "<<myCar.getYear()<<endl;
+	
+	for (int i = 1; i <= 5; i++)
+	{
+		myCar.accelerate();
+		cout<<"The current speed of the car is: "<<myCar.getSpeed()<<endl;
+	}
+	
+	
+	for (int i = 1; i <= 5; i++)
+	{
+		myCar.brake();
+		cout<<"The current speed of the car is: "<<myCar.getSpeed()<<endl;
+	}
+	
+	
+	//another object using the no-arg Constructor hence we must use the setters
+	Car yourCar;
+	yourCar.setMake("Benz");
+	yourCar.setYear(2020);
+	yourCar.setSpeed(0);
+	cout<<"Your car make is "<<yourCar.getMake() <<" Model year is "<<yourCar.getYear()<<endl;
+	
+	
+	
+	return 0;
+}

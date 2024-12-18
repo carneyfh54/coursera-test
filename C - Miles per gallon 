@@ -1,0 +1,33 @@
+/*********************
+Author: C.Adjetey
+Date: 18/01/2024
+Progrm : Miles per Gallon
+**********************/
+#include <iomanip>
+#include <iostream>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+using namespace std;
+
+int main(int argc, char** argv) {
+	
+	int milesTraveled, numGallons;
+	double milePerGallon;
+	
+	//input
+	cout<<"Enter the miles traveld by the vehicle:";
+	cin>>milesTraveled;
+	
+	cout<<"Enter the num of gallons used in the travelling:";
+	cin>>numGallons;
+	
+	//computation
+	milePerGallon = milesTraveled / numGallons;
+	
+	//display
+	cout<<fixed<<showpoint<<setprecision(2);
+	cout<<"The miles per gallon for the vehicle is: "<<milePerGallon<<"MPG"<<endl;
+	
+	return 0;
+}
